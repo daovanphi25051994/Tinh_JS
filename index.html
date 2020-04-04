@@ -1,23 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Văn sĩ</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<input id="num1">
-<select id="choose">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">x</option>
-    <option value="/">/</option>
-</select>
-<input id="num2">
-<button onclick="showResult()">=</button>
-<p id="result"></p>
+<form action="#" method="POST" name="info">
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+            <div class="content-title">
+                <label>Mã sinh viên</label>
+                <div class="content-search">
+                    <input type="text" name="msSinhVien" id="msSinhVien"/>
+                </div>
+                <span id="error-mssv" class="error"></span>
+            </div>
+            <div class="content-title">
+                <label>Họ và tên</label>
+                <div class="content-search">
+                    <input type="text" name="hoTen" id="hoTen"/>
+                </div>
+                <span id="error-hoTen" class="error"></span>
+            </div>
+            <div class="content-title">
+                <label>Email</label>
+                <div class="content-search">
+                    <input type="email" name="email" id="email"/>
+                </div>
+                <span id="error-email" class="error"></span>
+            </div>
+            <div class="content-title">
+                <label>Giới tính</label>
+                <div class="content-search-title" id="content-search-title">
+                    <label><input type="radio" name="gioiTinh" value="Nam"/>Nam</label>
+                    <label><input type="radio" name="gioiTinh" value="Nữ"/> Nữ</label>
+                </div>
+                <span id="error-gioiTinh" class="error"></span>
+            </div>
+            <div class="content-title">
+                <label>Sở thích</label>
+                <div class="content-search-title">
+                    <label> <input type="checkbox" name="soThich" value="docsach"/>Đọc sách</label>
+                    <label><input type="checkbox" name="soThich" value="Dulich"/> Du lịch</label>
+                    <label><input type="checkbox" name="soThich" value="Amnhac"/>Âm nhạc</label>
+                    <label> <input type="checkbox" name="soThich" value="amthuc"/> Ẩm thực</label>
+                    <label><input type="checkbox" name="soThich" value="Khac"/>Khác</label>
+                </div>
+                <span id="error-soThich" class="error"></span>
+            </div>
+            <div class="content-title">
+                <label>Quốc tịch</label>
+                <div class="content-search-body">
+                    <select id="quocTich" name="quocTich">
+                        <option value="quoctich">Chọn quốc tịch</option>
+                        <option value="vietnam">Việt Nam</option>
+                        <option value="mi"> Mĩ</option>
+                        <option value="nhat"> Nhật</option>
+                    </select>
+                    <span id="error-quocTich" class="error"></span>
+                </div>
+            </div>
+            <div class="content-title">
+                <label>Ghi chú</label>
+                <div class="content-search-note">
+              <textarea
+                      name="ghiChu"
+                      value="ghiChu"
+                      placeholder="Tối thiểu 200 kí tự.."
+              ></textarea>
+                </div>
+            </div>
+            <div class="content-title-submit">
+                <button onclick="getInfo(); return false;">Đăng kí</button>
+            </div>
+        </div>
+        <div id="output"></div>
+    </div>
+</form>
 <script src="app.js"></script>
 </body>
 </html>
